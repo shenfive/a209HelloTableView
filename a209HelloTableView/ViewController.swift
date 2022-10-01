@@ -22,14 +22,32 @@ class ViewController: UIViewController {
         
         if theName.count < 2{
             //提示使用者姓名大於兩個字元
-            var alert = UIAlertController(title: nil, message: "提示使用者姓名大於兩個字元", preferredStyle: UIAlertController.Style.alert)
-            var action = UIAlertAction(title: "我知道了", style: UIAlertAction.Style.default)
-            alert.addAction(action)
-            self.present(alert, animated: true)
+            showAlert(message: "使用者姓名大於兩個字元")
             return
         }
         
+        if thePhone.count < 10 {
+            showAlert(message: "電話至少十碼")
+            return
+        }
+        
+        
+        
     }
+    
+    
+    
+    
+    
+    
+    func showAlert(message:String){
+        let alert = UIAlertController(title: "提示",
+                                      message: message,
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "我知道了", style: .default))
+        self.present(alert, animated: true)
+    }
+    
     
 }
 
