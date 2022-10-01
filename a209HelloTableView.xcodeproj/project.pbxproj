@@ -13,6 +13,7 @@
 		BA680E5D28E7D9680038ACF0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA680E5B28E7D9680038ACF0 /* Main.storyboard */; };
 		BA680E5F28E7D9690038ACF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA680E5E28E7D9690038ACF0 /* Assets.xcassets */; };
 		BA680E6228E7D9690038ACF0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA680E6028E7D9690038ACF0 /* LaunchScreen.storyboard */; };
+		BA680E6A28E7DB130038ACF0 /* AViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA680E6928E7DB130038ACF0 /* AViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		BA680E5E28E7D9690038ACF0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA680E6128E7D9690038ACF0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA680E6328E7D9690038ACF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA680E6928E7DB130038ACF0 /* AViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				BA680E5E28E7D9690038ACF0 /* Assets.xcassets */,
 				BA680E6028E7D9690038ACF0 /* LaunchScreen.storyboard */,
 				BA680E6328E7D9690038ACF0 /* Info.plist */,
+				BA680E6928E7DB130038ACF0 /* AViewController.swift */,
 			);
 			path = a209HelloTableView;
 			sourceTree = "<group>";
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA680E6A28E7DB130038ACF0 /* AViewController.swift in Sources */,
 				BA680E5A28E7D9680038ACF0 /* ViewController.swift in Sources */,
 				BA680E5628E7D9680038ACF0 /* AppDelegate.swift in Sources */,
 				BA680E5828E7D9680038ACF0 /* SceneDelegate.swift in Sources */,

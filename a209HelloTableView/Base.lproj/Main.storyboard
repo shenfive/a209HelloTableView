@@ -1,24 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="to4-QR-VHN">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--新增連絡人-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="a209HelloTableView" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="請輸入姓名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HM7-uT-5J3">
+                                <rect key="frame" x="70" y="91" width="250" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" textContentType="name"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="請輸入電話" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9v8-MJ-3Rc">
+                                <rect key="frame" x="70" y="145" width="250" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DB5-3c-zZv">
+                                <rect key="frame" x="245" y="199" width="75" height="35"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="0zv-lz-j8t"/>
+                                    <constraint firstAttribute="height" constant="35" id="m8n-lu-39J"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="新增"/>
+                                <connections>
+                                    <action selector="addNewName:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aem-PV-vdm"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                        <constraints>
+                            <constraint firstItem="HM7-uT-5J3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="44" id="3e5-c8-r5o"/>
+                            <constraint firstItem="9v8-MJ-3Rc" firstAttribute="top" secondItem="HM7-uT-5J3" secondAttribute="bottom" constant="20" id="HeP-EG-cgI"/>
+                            <constraint firstItem="9v8-MJ-3Rc" firstAttribute="width" secondItem="HM7-uT-5J3" secondAttribute="width" id="JkM-dw-s41"/>
+                            <constraint firstItem="DB5-3c-zZv" firstAttribute="trailing" secondItem="9v8-MJ-3Rc" secondAttribute="trailing" id="MwH-V4-WSN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HM7-uT-5J3" secondAttribute="trailing" constant="70" id="WNn-4D-Vgr"/>
+                            <constraint firstItem="HM7-uT-5J3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="70" id="gHf-de-Izx"/>
+                            <constraint firstItem="DB5-3c-zZv" firstAttribute="top" secondItem="9v8-MJ-3Rc" secondAttribute="bottom" constant="20" id="gg4-iS-udE"/>
+                            <constraint firstItem="9v8-MJ-3Rc" firstAttribute="leading" secondItem="HM7-uT-5J3" secondAttribute="leading" id="sa2-LD-crl"/>
+                        </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="新增連絡人" image="pencil" catalog="system" id="REJ-50-Ssb"/>
+                    <connections>
+                        <outlet property="name" destination="HM7-uT-5J3" id="8IG-1p-jvQ"/>
+                        <outlet property="phone" destination="9v8-MJ-3Rc" id="o8H-ir-hNP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-515.38461538461536" y="708.76777251184831"/>
+        </scene>
+        <!--通訊錄-->
+        <scene sceneID="JOG-yH-ohd">
+            <objects>
+                <viewController id="1F9-D7-3yC" customClass="AViewController" customModule="a209HelloTableView" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6cc-uA-nEd">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="yRp-B6-LkR"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="通訊錄" image="a.book.closed.fill.zh" catalog="system" id="tjS-IV-HZn"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2QP-GL-zhl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="403" y="709"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Rcu-Mt-8DH">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="to4-QR-VHN" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NP1-1a-nDL">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="lmk-iu-lj2"/>
+                        <segue destination="1F9-D7-3yC" kind="relationship" relationship="viewControllers" id="d5X-OR-miz"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5oa-Bp-Tac" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-15.384615384615383" y="-28.436018957345969"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="a.book.closed.fill.zh" catalog="system" width="115" height="128"/>
+        <image name="pencil" catalog="system" width="128" height="113"/>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
