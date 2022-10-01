@@ -32,6 +32,16 @@ class ViewController: UIViewController {
         }
         
         
+        let content:[String:String] = ["name":theName,"phone":thePhone]
+        let defult = UserDefaults.standard
+        var addbook = defult.value(forKey: "addressBook") as? Array<[String:String]> ?? []
+        addbook.append(content)
+        defult.set(addbook, forKey: "addressBook")
+        
+        showAlert(message: "已完成新增:\(theName)")
+        name.text = ""
+        phone.text = ""
+        
         
     }
     
