@@ -7,23 +7,40 @@
 
 import UIKit
 
-class AViewController: UIViewController {
+class AViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBOutlet weak var oneTableView: UITableView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        oneTableView.delegate = self
+        oneTableView.dataSource = self
     }
-    */
+    
+    //MARK:TableView Dalegate and Data Source
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        if indexPath.section == 1{
+            cell.backgroundColor = UIColor.red
+        }else{
+            cell.backgroundColor = UIColor.green
+        }
+        
+        cell.textLabel?.text = "Hello \(indexPath.row) \(indexPath.section) "
+        return cell
+    }
+
 
 }
