@@ -24,16 +24,14 @@ class AViewController: UIViewController, UITableViewDelegate, UITableViewDataSou
         super.viewWillAppear(animated)
         let defult = UserDefaults.standard
         addbook = defult.value(forKey: "addressBook") as? Array<[String:String]> ?? []
+        oneTableView.reloadData()
     }
-    
-    
+        
     //MARK:TableView Dalegate and Data Source
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    
-
-    
+ 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return addbook.count
     }
