@@ -22,24 +22,24 @@ class AViewController: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     //MARK:TableView Dalegate and Data Source
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 1
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5000
+        return 50
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "thereuseid")!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "thereuseid") as! MyTableViewCell
         
-        if indexPath.section == 1{
-            cell.backgroundColor = UIColor.red
-        }else{
-            cell.backgroundColor = UIColor.green
-        }
+        cell.name.text = "hahaha"
         
-        cell.textLabel?.text = "Hello \(indexPath.row) \(indexPath.section) "
+        cell.phone.text = "call me baby"
+        
         return cell
     }
 

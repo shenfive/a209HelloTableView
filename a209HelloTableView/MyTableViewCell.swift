@@ -8,6 +8,9 @@
 import UIKit
 
 class MyTableViewCell: UITableViewCell {
+    @IBOutlet weak var phone: UILabel!
+    @IBOutlet weak var name: UILabel!
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
